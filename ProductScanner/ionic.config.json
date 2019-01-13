@@ -1,6 +1,9 @@
 {
   "name": "ProductScanner",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular",
-  "pro_id": "829bf5b5"
+  "pro_id": "829bf5b5",
+  "id": "829bf5b5"
 }

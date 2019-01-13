@@ -1,0 +1,29 @@
+<div *ngIf="keywordMasterList">
+        <ng-container *ngFor="let keywordList of keywordMasterList; let listIndex = index;">
+                <div class="keyword-table">
+                        <ocr-keyword-list [keywordList]="keywordList" (deleteRecordEmitter)="deleteRecord(listIndex, $event)"
+                                (addRecordEmitter)="addRecord(listIndex, $event)" (deleteListEmitter)="deleteList(listIndex)"
+                                (toggleActiveListEmitter)="toggleActiveList(listIndex)"></ocr-keyword-list>
+                </div>
+        </ng-container>
+</div>
+<hr>
+<div class="ocr-center">
+        <table border="1" *ngIf="addingList">
+
+                <caption>Creating New List</caption>
+                <tr (blur)="cancelAddList()">
+                        <td>
+                                <ion-input placeholder="...new list name" [(ngModel)]="addingListValue"></ion-input>
+                        </td>
+                        <td>
+                                <ion-button (click)="addList()">Create List</ion-button>
+                        </td>
+                </tr>
+        </table>
+
+        <ion-button *ngIf="!addingList" (click)="clickedAddList()">Add New List</ion-button>
+</div>
+<div class="ocr-center">
+        <ion-button color="danger" *ngIf="!addingList" (click)="resetStorage()">RESET STORAGE</ion-button>
+</div>

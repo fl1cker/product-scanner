@@ -1,0 +1,22 @@
+<table border="1" class="ocr-center">
+
+    <caption>{{keywordList.category}}&nbsp;&nbsp;
+        <ion-icon (click)="toggleActiveList()" name="switch" [ngClass]="keywordList.isActive ? 'icon-on' : 'icon-off'"></ion-icon>
+    </caption>
+    <ng-container *ngIf="keywordList.values.length > 0">
+        <ps-keyword-row [keywordValue]="keywordRow" (deleteEmitter)="deleteRecord(recordIndex)" *ngFor="let keywordRow of keywordList.values; let recordIndex = index;"></ps-keyword-row>
+    </ng-container>
+    <tr *ngIf="addingRecord" (blur)="cancelAddRecord()">
+        <td>
+            <ion-input placeholder="...new value" [(ngModel)]="addedRecordValue"></ion-input>
+        </td>
+        <td>
+            <ion-button (click)="addRecord()">Add Value</ion-button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <ion-button *ngIf="!addingRecord" (click)="clickedAddRow()" class="ocr-center">Add Record</ion-button>
+        </td>
+    </tr>
+</table>
