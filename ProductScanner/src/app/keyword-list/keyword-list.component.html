@@ -1,7 +1,7 @@
 <table border="1" class="ocr-center">
 
     <caption>{{keywordList.category}}&nbsp;&nbsp;
-        <ion-icon (click)="toggleActiveList()" name="switch" [ngClass]="keywordList.isActive ? 'icon-on' : 'icon-off'"></ion-icon>
+        <span (click)="toggleActiveList()" name="switch" [ngClass]="keywordList.isActive ? 'icon-on' : 'icon-off'">{{keywordList.isActive ? 'ON' : 'OFF'}}</span>
     </caption>
     <ng-container *ngIf="keywordList.values.length > 0">
         <ps-keyword-row [keywordValue]="keywordRow" (deleteEmitter)="deleteRecord(recordIndex)" *ngFor="let keywordRow of keywordList.values; let recordIndex = index;"></ps-keyword-row>
