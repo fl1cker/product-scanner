@@ -3,10 +3,10 @@ import { SettingsPage } from "./settings.page";
 import { RouterModule } from "@angular/router";
 import { IonicModule } from "@ionic/angular";
 import { FormsModule } from "@angular/forms";
-import { KeywordListComponent } from "../components/keyword-list/keyword-list.component";
-import { KeywordRowComponent } from "../components/keyword-list/keyword-row/keyword-row.component";
-import { KeywordItemComponent } from "../components/keyword-list/keyword-row/keyword-item/keyword-item.component";
 import { CommonModule } from "@angular/common";
+import { KeywordListComponent } from "../keyword-list/keyword-list.component";
+import { KeywordRowComponent } from "../keyword-list/keyword-row/keyword-row.component";
+import { KeywordItemComponent } from "../keyword-list/keyword-row/keyword-item/keyword-item.component";
 
 @NgModule({
     imports: [
